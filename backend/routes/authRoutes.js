@@ -26,7 +26,7 @@ authRouter.post("/register", async (req, res) => {
         await user.save();
         res.status(201).json({ "message": "user registerd successfully" })
     } catch (error) {
-
+        res.status(500).json({ message: 'internal server error.', error: error.message },)
     }
 })
 
@@ -48,7 +48,12 @@ authRouter.post("/login", async (req, res) => {
     }
 })
 
-authRouter.get("/protected", verifyToken, (req, res) => {
-    console.log(req.user);
-    res.json({ "message": `Welcome` })
+authRouter.get("/protected", verifyToken, async (req, res) => {
+    try {
+        const _id=req.user;
+        const user= await User.findOne({_id});
+        res.json({ "message": `Welcome ${user.username}`, })
+    } catch (error) {
+        res.json({message:'internal server error.'})
+    }
 })

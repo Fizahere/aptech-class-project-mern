@@ -7,8 +7,9 @@ import { authRouter } from "./routes/authRoutes.js";
 
 async function connect_db(){
     try {
-        await mongoose.connect("mongodb+srv://fizabatool0278:lQop8BhHBLZsuF3I@cluster0.nrqwr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+        await mongoose.connect("mongodb+srv://fizabatool0278:Z3SiX64mDu1ejvg8@cluster0.3mcq6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
         console.info("connected to mongodb")
+        
     } catch (error) {
         console.error(error.message)
     }
@@ -23,6 +24,6 @@ app.use("/api/students", studentRouter);
 app.use("/api/faculties", facultyRouter);
 app.use("/api/auth", authRouter);
 
-app.listen(5000, () => {
-    console.log("server running")
+app.listen(2000, () => {
+    console.log("server is running on port 2000.")
 })
