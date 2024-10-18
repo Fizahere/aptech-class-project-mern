@@ -1,11 +1,16 @@
 body{
     font-family: sans-serif;
 }
+.parent-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
 .container{
-    width: 400px;
-    margin: 0 auto;
-    margin-top: 50px;
-    padding: 30px 40px 60px 40px;
+    width: 25rem;
+    padding: 1.875rem 2.5rem 3.75rem 2.5rem;
     box-shadow: 10px 10px 10px 10px rgb(199, 197, 197);
 }
 .form{
@@ -13,19 +18,20 @@ body{
     flex-direction: column;
 }
 .input{
-    padding: 10px;
-    margin-top: 8px;
-    height: 20px;
+    padding: 0.625rem;
+    margin-top: 0.5rem;
+    height: 1.25rem;
     border-radius: 6px;
     border: 1px solid grey;
+    font-size: 0.938rem;
 }
 .input:focus {
     outline: 1px solid hotpink; 
 }
 .err_input{
-    padding: 10px;
-    margin-top: 8px;
-    height: 20px;
+    padding: 0.625rem;
+    margin-top: 0.5rem;
+    height: 1.25rem;
     border-radius: 6px;
     border: 1px solid grey;
 }
@@ -33,13 +39,13 @@ body{
     outline: 1px solid red; 
 }
 .button{
-    margin-top: 20px;
-    height: 40px;
+    margin-top: 1.25rem;
+    height: 2.5rem;
     background-color: hotpink;
     border: 1px solid hotpink;
     color: white;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 0.938rem;
     border-radius: 6px;
     cursor: pointer;
 }
@@ -47,42 +53,48 @@ body{
     background-color: rgba(247, 115, 181, 0.904)
 }
 .check-if-login-btn{
-    margin-top: 20px;
+    margin-top: 1.25rem;
     cursor: pointer;
-    height: 40px;
+    height: 2.5rem;
     border: 1px solid rgb(37, 37, 37);
     background-color: rgb(37, 37, 37);
     border-radius: 6px;
     color: white;
-    font-size: 15px;
+    font-size: 0.938rem;
     font-weight: bold;
-    width: 400px;
+    width: 25rem;
 }
 .check-if-login-btn:hover{
     background-color: rgb(58, 56, 56);
 }
 .error{
     color: red;
-    font-size: 14px;
-    margin-top: 4px;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
 }
 .pass{
-    width: 378px;
+    width: 23.625rem;
 }
 .icon{
-    margin-top: 18px;
+    margin-top: 1.125rem;
     font-size: larger;
     cursor: pointer;
     position: absolute;
-    left: 370px;
+    left: 23.125rem;
 } 
 .password-field{
     display: flex;
    position: relative;
 }
 .message-field{
-    margin-top: 8px;
+    margin-top: 0.5rem;
     color: rgb(34, 215, 34);
-    font-size: 17px;
+    font-size: 1.063rem;
     text-align: center;
 }
+@media screen and (max-width: 530px) {
+html{
+    font-size: 10px;
+}
+}
+  

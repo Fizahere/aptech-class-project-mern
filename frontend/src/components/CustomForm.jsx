@@ -75,6 +75,7 @@ const CustomForm = () => {
   }
 
   return (
+    <div className="parent-container">
     <div className="container">
       <h2 className="heading">Login</h2>
       <form onSubmit={formik.handleSubmit}>
@@ -127,6 +128,7 @@ const CustomForm = () => {
         Check Login Status
       </button>
       <div className="message-field">{message}</div>
+    </div>
     </div>
   );
 };
