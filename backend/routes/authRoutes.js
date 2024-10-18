@@ -42,7 +42,7 @@ authRouter.post("/login", async (req, res) => {
             res.status(401).json({ "message": "invalid credentials" });
         }
         const token = sign({ user: user._id }, "aptech")
-        res.json({ token })
+        res.json({ token:token,user:user.username })
     } catch (error) {
         console.error(error.message)
     }
@@ -52,7 +52,7 @@ authRouter.get("/protected", verifyToken, async (req, res) => {
     try {
         const _id=req.user;
         const user= await User.findOne({_id});
-        res.json({ "message": `Welcome ${user.username}`, })
+        res.json({user:user.username})
     } catch (error) {
         res.json({message:'internal server error.'})
     }
